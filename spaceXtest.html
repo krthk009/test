@@ -1,0 +1,345 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #E0E0E0;
+        }
+
+        header,
+        footer {
+            height: 5%;
+            /* border: solid black; */
+        }
+
+        section {
+            height: 90%;
+            /* border: solid black; */
+        }
+
+        section .left_div {
+            width: 20%;
+            height: 100%;
+            /* border: solid black; */
+            float: left;
+        }
+
+        section .right_div {
+            width: 80%;
+            height: 100%;
+            /* border: solid black; */
+            float: left;
+        }
+
+        button {
+            display: inline-block;
+            width: 44%;
+            margin: 2%;
+            background: #b8dc70;
+            border: none;
+            border-radius: 2px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .heading {
+            width: 60%;
+            font-size: 0.8em;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: solid #E0E0E0;
+        }
+
+        .wrap {
+            background: #fff;
+            margin: 5%;
+            height: 70%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1%;
+        }
+
+        .inner_block {
+            width: 23%;
+            height: 45%;
+            margin: 1%;
+            padding: 1%;
+            float: left;
+            /* border: solid black; */
+            background: #fff;
+        }
+
+        .inner_block h4 {
+            color: #00308F;
+        }
+
+        .inner_block span {
+            color: #0066b2;
+        }
+
+        ul {
+            padding: 0 5%;
+        }
+
+        ul li {
+            list-style-position: inside;
+        }
+
+        img {
+            width: 95%;
+            height: 40%;
+            /* border: solid black; */
+            background: #E0E0E0;
+        }
+
+        .sno {
+            display: none;
+        }
+
+        @media screen and (max-width:1024px) {
+
+            section,
+            header,
+            footer {
+                height: auto;
+            }
+
+            section .left_div {
+                height: 100%;
+            }
+
+            section .right_div {
+                height: auto;
+            }
+
+            .inner_block {
+                margin: 2%;
+                width: 44%;
+            }
+        }
+
+        @media screen and (max-width:700px) {
+
+
+            section,
+            header,
+            footer {
+                height: auto;
+            }
+
+            section .left_div {
+                width: 100%;
+            }
+
+            section .right_div {
+                width: 100%;
+                height: auto;
+            }
+
+            .inner_block {
+                margin: 5%;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>SpaceX Launch Programs</h2>
+    </header>
+    <section>
+
+        <div class="left_div">
+            <div class="wrap">
+                <h3>Filters</h3>
+                <p class="heading">Launch Year</p>
+                <button value="2006" onclick="sendValue(this)">2006</button>
+                <button value="2007" onclick="sendValue(this)">2007</button>
+                <button value="2008" onclick="sendValue(this)">2008</button>
+                <button value="2009" onclick="sendValue(this)">2009</button>
+                <button value="2010" onclick="sendValue(this)">2010</button>
+                <button value="2011" onclick="sendValue(this)">2011</button>
+                <button value="2012" onclick="sendValue(this)">2012</button>
+                <button value="2013" onclick="sendValue(this)">2013</button>
+                <button value="2014" onclick="sendValue(this)">2014</button>
+                <button value="2015" onclick="sendValue(this)">2015</button>
+                <button value="2016" onclick="sendValue(this)">2016</button>
+                <button value="2017" onclick="sendValue(this)">2017</button>
+                <button value="2018" onclick="sendValue(this)">2018</button>
+                <button value="2019" onclick="sendValue(this)">2019</button>
+                <button value="2020" onclick="sendValue(this)">2020</button>
+
+                <p class="heading">Successful Launch</p>
+                <button value="true" onclick=successfulLaunchValue(this)>True</button>
+                <button value="false" onclick=successfulLaunchValue(this)>False</button>
+
+                <p class="heading">Successful Landing</p>
+                <button value="true" onclick=successfulLandValue(this)>True</button>
+                <button value="false" onclick=successfulLandValue(this)>False</button>
+
+            </div>
+        </div>
+
+        <div class="right_div">
+            <div class="inner_block" id="inner_div_0">
+                <img id="img_1" src="" alt="">
+                <h4 id="mission_name_1"></h4>
+                <strong>Mission Ids </strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_0"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_0"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_0"></span></p>
+            </div>
+            <div class="inner_block" id="inner_div_1">
+                <img id="img_2" src="" alt="">
+                <h4 id="mission_name_2"></h4>
+                <strong>Mission Ids </strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_1"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_1"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_1"></span></p>
+            </div>
+            <div class="inner_block" id="inner_div_2">
+                <img id="img_3" src="" alt="">
+                <h4 id="mission_name_3"></h4>
+                <strong>Mission Ids </strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_2"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_2"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_2"></span></p>
+            </div>
+            <div class="inner_block" id="inner_div_3">
+                <img id="img_4" src="" alt="">
+                <h4 id="mission_name_4"></h4>
+                <strong>Mission Ids </strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_3"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_3"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_3"></span></p>
+            </div>
+            <div class="inner_block" id="inner_div_4">
+                <img id="img_5" src="" alt="">
+                <h4 id="mission_name_5"></h4>
+                <strong>Mission Ids</strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_4"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_4"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_4"></span></p>
+            </div>
+            <div class="inner_block" id="inner_div_5">
+                <img id="img_6" src="" alt="">
+                <h4 id="mission_name_6"></h4>
+                <strong>Mission Ids </strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_5"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_5"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_5"></span></p>
+            </div>
+            <div class="inner_block" id="inner_div_6">
+                <img id="img_7" src="" alt="">
+                <h4 id="mission_name_7"></h4>
+                <strong>Mission Ids </strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_6"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_6"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_6"></span></p>
+            </div>
+            <div class="inner_block" id="inner_div_7">
+                <img id="img_8" src="" alt="">
+                <h4 id="mission_name_8"></h4>
+                <strong>Mission Ids </strong>
+                <ul>
+                    <li>N/A</li>
+                </ul>
+                <p><strong>Launch year: </strong><span id="ly_7"></span></p>
+                <p><strong>Successful Launch: </strong><span id="suc_launch_7"></span></p>
+                <p><strong>Successful Landing: </strong><span id="suc_land_7"></span></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </section>
+    <footer>
+        <strong>Developed By: </strong><span>Karthik R</span>
+    </footer>
+</body>
+<script>
+    var obj = {};
+    function serverCall() {
+        $.ajax({
+            type: 'GET',
+            url: 'https://api.spaceXdata.com/v3/launches?limit=100',
+            data: obj,
+            success: function (param) {
+                for (i = 0; i < param.length; i++) {
+                    $("#mission_name_" + (i + 1)).text(param[i].mission_name + " # " + param[i].flight_number)
+                    $("#img_" + (i + 1)).attr("src", param[i].links.mission_patch)
+                    $("#ly_" + i).text(param[i].launch_year)
+                    $("#suc_launch_" + i).text(param[i].launch_success)
+                    $("#inner_div_" + i).removeClass("sno")
+                    $("li").eq(i).text(param[i].mission_id[0])
+                    if (param.length < 8) {
+                        var num = 8 - param.length
+                        for (j = num; j > 0; j--) {
+                            $("#inner_div_" + j).addClass("sno")
+                        }
+                    }
+
+                    if (i == 8) break;
+                }
+
+            },
+            error: function () {
+                console.log("error");
+            }
+        })
+    }
+
+    serverCall();
+
+    function sendValue(param) {
+        obj.launch_year = Number(param.value);
+        serverCall();
+    }
+
+    function successfulLaunchValue(param) {
+        obj.launch_success = param.value;
+        serverCall();
+    }
+    function successfulLandValue(param) {
+        obj.land_success = param.value;
+        serverCall();
+    }
+
+</script>
+
+</html>
